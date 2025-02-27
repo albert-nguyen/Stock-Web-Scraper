@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h3>Get A Stock Quote</h3>
+    <form action="{{ url_for('quote') }}" method="post">
+        <input = "text" placeholder = "Symbol" name = "symbol">
+        <button type = "submit">Get Quote</button>
+    </form>
+    {% if quote %}
+    <h3>{{ quote['name'] }} ({{ quote['symbol']}})</h3>
+    <p>Price: {{quote['price']|usd }}</p>
+    {% endif %}
+{% endblock %}

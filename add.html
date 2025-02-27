@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Money
+{% endblock %}
+
+{% block main %}
+    <h3>Add Money</h3>
+    <form action="{{ url_for('add') }}" method="post">
+        <label for = "symbol">Add Money</label>
+        <input type = "number" name = "cash_added" id = "symbol"><br>
+        <input type="submit" value = "Add">
+    </form>
+{% endblock %}
